@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1320.0" style="-fx-background-color: #E4EFF5;" stylesheets="@css/styles2.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assigment3.AdminController">
+   <left>
+      <AnchorPane prefHeight="871.0" prefWidth="245.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pic/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="55.0" layoutY="158.0" text="GENERAL" textFill="#718096">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="logout" layoutX="60.0" layoutY="780.0" onAction="#logout" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="LogOut">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <ImageView fitHeight="22.0" fitWidth="23.0" styleClass="image-with-border">
+                        <Image url="@pic/settings.png" />
+                     </ImageView>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding> <!-- Or use <Text> instead of <Label> -->
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="staffbutton" layoutX="34.0" layoutY="466.0" onAction="#getStaff" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Staff">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="27.0">
+                           <image>
+                              <Image url="@pic/libary.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="dasboardbutton" layoutX="34.0" layoutY="203.0" onAction="#getDashboard" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button1" text="DashBoard">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="23.0">
+                           <image>
+                              <Image url="@pic/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="coursesbutton" layoutX="34.0" layoutY="265.0" onAction="#getCourse" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Courses">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="18.0">
+                           <image>
+                              <Image url="@pic/book_2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="studentsbutton" layoutX="34.0" layoutY="330.0" onAction="#getStudent" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Students">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="23.0">
+                           <image>
+                              <Image url="@pic/account_circle.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="teacherbutton" layoutX="34.0" layoutY="398.0" onAction="#getTeacher" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Teachers">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="30.0">
+                           <image>
+                              <Image url="@pic/teacher.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="reportbutton" layoutX="42.0" layoutY="535.0" onAction="#getreport" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Report">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="27.0">
+                           <image>
+                              <Image url="@pic/libary.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+
+
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="Dashboard" prefHeight="871.0" prefWidth="769.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="45.0" layoutY="54.0" text="Dashboard" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="65.0" layoutY="148.0" prefHeight="148.0" prefWidth="684.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="42.0" prefHeight="70.0" prefWidth="336.0" text="Welcome Back ">
+                           <font>
+                              <Font name="Cairo-Regular" size="48.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="146.0" layoutY="74.0" prefHeight="45.0" prefWidth="101.0" text="Admin">
+                           <font>
+                              <Font name="Cairo-Regular" size="30.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="142.0" fitWidth="296.0" layoutX="388.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/admin1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="66.0" layoutY="307.0" prefHeight="216.0" prefWidth="352.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="128.0" fitWidth="122.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/students.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="17.0" endY="76.0" layoutX="119.0" layoutY="70.0" startX="17.0" startY="-34.0" stroke="#0000007f" />
+                        <Label layoutX="151.0" layoutY="25.0" text="Students" textFill="#000000c3">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="171.0" layoutY="87.0" prefHeight="69.0" prefWidth="92.0" text="123">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="student" layoutX="115.0" layoutY="156.0" onAction="#getStudent" prefHeight="34.0" prefWidth="112.0" styleClass="rounded-button1" text="Student">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="426.0" layoutY="304.0" prefHeight="216.0" prefWidth="323.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="128.0" fitWidth="122.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/teac.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="17.0" endY="76.0" layoutX="119.0" layoutY="70.0" startX="17.0" startY="-34.0" stroke="#0000007f" />
+                        <Label layoutX="150.0" layoutY="25.0" text="Teachers" textFill="#000000b6">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="169.0" layoutY="85.0" prefHeight="69.0" prefWidth="92.0" text="50">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="teacher1" layoutX="119.0" layoutY="154.0" onAction="#getTeacher" prefHeight="34.0" prefWidth="112.0" styleClass="rounded-button1" text="Teacher">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="191.0" layoutY="568.0" prefHeight="216.0" prefWidth="323.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="128.0" fitWidth="122.0" layoutX="14.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/teac.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="17.0" endY="76.0" layoutX="119.0" layoutY="70.0" startX="17.0" startY="-34.0" stroke="#0000007f" />
+                        <Label layoutX="150.0" layoutY="25.0" text="Staff" textFill="#000000b6">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="169.0" layoutY="85.0" prefHeight="69.0" prefWidth="92.0" text="50">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="staff" layoutX="113.0" layoutY="154.0" onAction="#getStaff" prefHeight="34.0" prefWidth="112.0" styleClass="rounded-button1" text="staff">
+                           <font>
+                              <Font name="Leelawadee UI Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Course" prefHeight="871.0" prefWidth="769.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="45.0" layoutY="54.0" text="Courses" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="436.0" text="All Courses" textFill="#1a202bba">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="34.0" layoutY="116.0" prefHeight="299.0" prefWidth="701.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField layoutX="208.0" layoutY="79.0" prefHeight="45.0" prefWidth="182.0" promptText="Enter the Course Name" styleClass="text-field" />
+                        <Label layoutX="14.0" layoutY="85.0" text="Course Name">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="149.0" text="Course Describe">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="206.0" layoutY="147.0" prefHeight="45.0" prefWidth="182.0" promptText="Describe the Course" />
+                        <Label layoutX="13.0" layoutY="217.0" text="Course Image">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="260.0" layoutY="14.0" text="Add Courses" textFill="#191f29ba">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="imageButton1213" graphicTextGap="0.0" layoutX="239.0" layoutY="223.0" prefHeight="41.0" prefWidth="94.0" styleClass="viewad" text="Add Image">
+                           <font>
+                              <Font name="Leelawadee UI" size="4.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="95.0" layoutY="471.0" prefHeight="181.0" prefWidth="246.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="83.0" fitWidth="147.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image4.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="imageButton121" graphicTextGap="0.0" layoutX="41.0" layoutY="147.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Veiw">
+                           <font>
+                              <Font name="Leelawadee UI" size="4.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="imageButton1211" graphicTextGap="0.0" layoutX="120.0" layoutY="147.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Delete">
+                           <font>
+                              <Font name="Leelawadee UI" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="43.0" layoutY="85.0" prefHeight="25.0" prefWidth="164.0" text="Advance Programming Java" textFill="#1a202bb9">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="110.0" prefHeight="32.0" prefWidth="164.0" text="Java Advance Course  For GUI Development" textFill="#1a202bb9" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="387.0" layoutY="669.0" prefHeight="181.0" prefWidth="246.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="79.0" fitWidth="147.0" layoutX="65.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/python.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="38.0" layoutY="86.0" prefHeight="25.0" prefWidth="164.0" text="Advance Programming Java" textFill="#1a202bb9">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="106.0" prefHeight="32.0" prefWidth="164.0" text="Java Advance Course  For GUI Development" textFill="#1a202bb9" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="imageButton12121" graphicTextGap="0.0" layoutX="44.0" layoutY="141.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Veiw">
+                           <font>
+                              <Font name="Leelawadee UI" size="4.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="imageButton121111" graphicTextGap="0.0" layoutX="124.0" layoutY="139.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Delete">
+                           <font>
+                              <Font name="Leelawadee UI" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="391.0" layoutY="471.0" prefHeight="181.0" prefWidth="246.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="83.0" fitWidth="147.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image5.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="imageButton121122" graphicTextGap="0.0" layoutX="41.0" layoutY="147.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Veiw">
+                           <font>
+                              <Font name="Leelawadee UI" size="4.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="imageButton12112" graphicTextGap="0.0" layoutX="120.0" layoutY="147.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Delete">
+                           <font>
+                              <Font name="Leelawadee UI" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="43.0" layoutY="85.0" prefHeight="25.0" prefWidth="164.0" text="Advance Programming Java" textFill="#1a202bb9">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="110.0" prefHeight="32.0" prefWidth="164.0" text="Java Advance Course  For GUI Development" textFill="#1a202bb9" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="95.0" layoutY="669.0" prefHeight="181.0" prefWidth="246.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="79.0" fitWidth="171.0" layoutX="45.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image6.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="38.0" layoutY="86.0" prefHeight="25.0" prefWidth="164.0" text="Advance Programming Java" textFill="#1a202bb9">
+                           <font>
+                              <Font name="Calibri Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="106.0" prefHeight="32.0" prefWidth="164.0" text="Java Advance Course  For GUI Development" textFill="#1a202bb9" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="Calibri" size="10.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="imageButton1212" graphicTextGap="0.0" layoutX="44.0" layoutY="141.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Veiw">
+                           <font>
+                              <Font name="Leelawadee UI" size="4.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="imageButton12111" graphicTextGap="0.0" layoutX="124.0" layoutY="139.0" prefHeight="22.0" prefWidth="62.0" styleClass="viewad" text="Delete">
+                           <font>
+                              <Font name="Leelawadee UI" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Staff" prefHeight="868.0" prefWidth="758.0" visible="false">
+               <children>
+                  <AnchorPane fx:id="Staff1" prefHeight="868.0" prefWidth="758.0">
+                     <children>
+                        <AnchorPane layoutX="34.0" layoutY="116.0" prefHeight="317.0" prefWidth="701.0" style="-fx-background-color: white;">
+                           <children>
+                              <TextField fx:id="staff_name" layoutX="180.0" layoutY="108.0" prefHeight="34.0" prefWidth="166.0" promptText="Enter the Staff Name" />
+                              <Label layoutX="42.0" layoutY="109.0" text=" Name">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="42.0" layoutY="159.0" text="Email">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="staff_email" layoutX="180.0" layoutY="158.0" prefHeight="34.0" prefWidth="166.0" promptText="Enter the Email" />
+                              <Label layoutX="293.0" layoutY="14.0" text="Add Staff" textFill="#191f29ba">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="42.0" layoutY="213.0" text="Password">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="415.0" layoutY="61.0" text="DOB">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="staff_password" layoutX="180.0" layoutY="210.0" prefHeight="34.0" prefWidth="166.0" promptText="Enter the Password" />
+                              <DatePicker fx:id="staff_dob" layoutX="478.0" layoutY="60.0" promptText="Choose the Date" style="-fx-background-color: #BBDEFB;" />
+                              <Label layoutX="406.0" layoutY="126.0" text="Phone">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="staff_contact" layoutX="478.0" layoutY="125.0" prefHeight="37.0" prefWidth="180.0" promptText="Enter the Phone number" />
+                              <Button fx:id="addstaff1" layoutX="516.0" layoutY="228.0" mnemonicParsing="false" onAction="#addstaff" prefHeight="40.0" prefWidth="92.0" styleClass="rounded-button1" text="Add" />
+                              <TextField fx:id="staff_id" layoutX="180.0" layoutY="60.0" prefHeight="34.0" prefWidth="166.0" promptText="Enter the Staff Name" />
+                              <Label layoutX="42.0" layoutY="61.0" text="Staff id">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="406.0" layoutY="176.0" text="Role">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="b1" layoutX="473.0" layoutY="186.0" mnemonicParsing="false" text="Admission office">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="choose" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="b2" layoutX="593.0" layoutY="186.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="83.0" text="Librarian" toggleGroup="$choose" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="54.0" layoutY="45.0" text="Staff" textFill="#1a202bb9">
+                           <font>
+                              <Font name="Arial Black" size="36.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="40.0" layoutY="471.0" prefHeight="366.0" prefWidth="694.0">
+                           <children>
+                              <TableView fx:id="table_of_staff" prefHeight="366.0" prefWidth="694.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="staff_id_column" prefWidth="75.0" text="Staff_Id" />
+                                    <TableColumn fx:id="staff_name_column" prefWidth="133.66668701171875" text="Name" />
+                                    <TableColumn fx:id="staff_email_column" prefWidth="119.33331298828125" text="Email" />
+                                    <TableColumn fx:id="staff_password_column" prefWidth="111.33334350585938" text="Password" />
+                                    <TableColumn fx:id="staff_dob_column" prefWidth="119.33331298828125" text="DOB" />
+                                    <TableColumn fx:id="staff_contact_column" prefWidth="135.33331298828125" text="Contact" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="61.0" layoutY="432.0" text="All Staff" textFill="#1a202bba">
+                           <font>
+                              <Font name="Calibri" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+
+            <!--            <AnchorPane fx:id="Student" prefHeight="868.0" prefWidth="765.0">-->
+            <!--               <children>-->
+            <!--                  <Label layoutX="45.0" layoutY="45.0" text="Students" textFill="#1a202bb9">-->
+            <!--                     <font>-->
+            <!--                        <Font name="Arial Black" size="36.0" />-->
+            <!--                     </font>-->
+            <!--                  </Label>-->
+            <!--                  <AnchorPane layoutX="45.0" layoutY="486.0" prefHeight="372.0" prefWidth="698.0" style="-fx-background-color: white;">-->
+            <!--                     <children>-->
+            <!--                        <TextField layoutX="93.0" layoutY="29.0" prefHeight="37.0" prefWidth="314.0" promptText="Search Students" />-->
+            <!--                        <Button layoutX="431.0" layoutY="31.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" styleClass="viewad" text="Search" />-->
+            <!--                        <AnchorPane layoutX="32.0" layoutY="93.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">-->
+            <!--                           <children>-->
+            <!--                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Student Name">-->
+            <!--                                 <font>-->
+            <!--                                    <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                                 </font>-->
+            <!--                              </Label>-->
+            <!--                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />-->
+            <!--                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />-->
+            <!--                           </children>-->
+            <!--                        </AnchorPane>-->
+            <!--                        <AnchorPane layoutX="32.0" layoutY="168.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">-->
+            <!--                           <children>-->
+            <!--                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Student Name">-->
+            <!--                                 <font>-->
+            <!--                                    <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                                 </font>-->
+            <!--                              </Label>-->
+            <!--                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />-->
+            <!--                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />-->
+            <!--                           </children>-->
+            <!--                        </AnchorPane>-->
+            <!--                        <AnchorPane layoutX="32.0" layoutY="239.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">-->
+            <!--                           <children>-->
+            <!--                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Student Name">-->
+            <!--                                 <font>-->
+            <!--                                    <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                                 </font>-->
+            <!--                              </Label>-->
+            <!--                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />-->
+            <!--                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />-->
+            <!--                           </children>-->
+            <!--                        </AnchorPane>-->
+            <!--                        <AnchorPane layoutX="32.0" layoutY="304.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">-->
+            <!--                           <children>-->
+            <!--                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Student Name">-->
+            <!--                                 <font>-->
+            <!--                                    <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                                 </font>-->
+            <!--                              </Label>-->
+            <!--                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />-->
+            <!--                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />-->
+            <!--                           </children>-->
+            <!--                        </AnchorPane>-->
+            <!--                     </children>-->
+            <!--                  </AnchorPane>-->
+            <!--                  <Label layoutX="45.0" layoutY="447.0" text="Search" textFill="#1a202bba">-->
+            <!--                     <font>-->
+            <!--                        <Font name="Calibri" size="24.0" />-->
+            <!--                     </font>-->
+            <!--                  </Label>-->
+            <!--                  <AnchorPane layoutX="34.0" layoutY="116.0" prefHeight="317.0" prefWidth="701.0" style="-fx-background-color: white;">-->
+            <!--                     <children>-->
+            <!--                        <TextField layoutX="179.0" layoutY="61.0" prefHeight="34.0" prefWidth="166.0" promptText="Enter the  Name" />-->
+            <!--                        <Label layoutX="42.0" layoutY="55.0" text="Student Name">-->
+            <!--                           <font>-->
+            <!--                              <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                           </font>-->
+            <!--                        </Label>-->
+            <!--                        <Label layoutX="42.0" layoutY="124.0" text="Course">-->
+            <!--                           <font>-->
+            <!--                              <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                           </font>-->
+            <!--                        </Label>-->
+            <!--                        <TextField layoutX="179.0" layoutY="125.0" prefHeight="34.0" prefWidth="166.0" promptText="Enter the Course" />-->
+            <!--                        <Label layoutX="42.0" layoutY="193.0" text="Email">-->
+            <!--                           <font>-->
+            <!--                              <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                           </font>-->
+            <!--                        </Label>-->
+            <!--                        <TextField layoutX="181.0" layoutY="194.0" prefHeight="34.0" prefWidth="163.0" promptText="Enter the Email" />-->
+            <!--                        <Label layoutX="262.0" layoutY="14.0" text="Add Student" textFill="#191f29ba">-->
+            <!--                           <font>-->
+            <!--                              <Font name="Cairo-Regular" size="24.0" />-->
+            <!--                           </font>-->
+            <!--                        </Label>-->
+            <!--                        <Label layoutX="42.0" layoutY="248.0" text="Password">-->
+            <!--                           <font>-->
+            <!--                              <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                           </font>-->
+            <!--                        </Label>-->
+            <!--                        <Label layoutX="415.0" layoutY="61.0" text="DOB">-->
+            <!--                           <font>-->
+            <!--                              <Font name="Cairo-Regular" size="18.0" />-->
+            <!--                           </font>-->
+            <!--                        </Label>-->
+            <!--                        <PasswordField layoutX="185.0" layoutY="247.0" promptText="Enter the Password" />-->
+            <!--                        <DatePicker layoutX="466.0" layoutY="60.0" promptText="Choose the Date" style="-fx-background-color: #BBDEFB;" />-->
+            <!--                     </children>-->
+            <!--                  </AnchorPane>-->
+            <!--               </children>-->
+            <!--            </AnchorPane>-->
+
+
+            <AnchorPane fx:id="Student" prefHeight="871.0" prefWidth="769.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="45.0" layoutY="45.0" text="Students" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="45.0" layoutY="486.0" prefHeight="372.0" prefWidth="698.0" style="-fx-background-color: white;">
+                     <children>
+                        <TableView fx:id="tableView" layoutX="32.0" layoutY="93.0" prefHeight="372.0" prefWidth="698.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                              <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name" />
+                              <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" />
+                              <TableColumn fx:id="contactColumn" prefWidth="100.0" text="Contact" />
+                              <TableColumn fx:id="locationColumn" prefWidth="100.0" text="Location" />
+                              <TableColumn fx:id="courseColumn" prefWidth="100.0" text="Course" />
+                              <TableColumn fx:id="startDateColumn" prefWidth="100.0" text="Start Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="45.0" layoutY="447.0" text="Search" textFill="#1a202bba">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="34.0" layoutY="95.0" prefHeight="338.0" prefWidth="701.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField fx:id="s_name" layoutX="200.0" layoutY="109.0" prefHeight="22.0" prefWidth="166.0" promptText="Enter the  Name" />
+                        <Label layoutX="63.0" layoutY="106.0" text="Student Name">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="396.0" layoutY="61.0" text="Course">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="s_course" layoutX="509.0" layoutY="63.0" prefHeight="2.0" prefWidth="166.0" promptText="Enter the Course" />
+                        <Label layoutX="63.0" layoutY="156.0" prefHeight="20.0" prefWidth="43.0" text="Email">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="s_mail" layoutX="200.0" layoutY="156.0" prefHeight="21.0" prefWidth="163.0" promptText="Enter the Email" />
+                        <Label layoutX="262.0" layoutY="14.0" text="Add Student" textFill="#191f29ba">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="396.0" layoutY="110.0" text="DOB">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="s_dob" layoutX="509.0" layoutY="109.0" promptText="Choose the Date" style="-fx-background-color: #BBDEFB;" />
+                        <Button fx:id="upload" layoutX="510.0" layoutY="213.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="40.0" prefWidth="77.0" styleClass="rounded-button1" text="Add" />
+                        <TextField fx:id="s_id" layoutX="200.0" layoutY="62.0" prefHeight="22.0" prefWidth="166.0" promptText="Enter the  Name" />
+                        <Label layoutX="63.0" layoutY="59.0" text="Student ID">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="63.0" layoutY="198.0" text="Contact">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="s_contact" layoutX="200.0" layoutY="200.0" prefHeight="2.0" prefWidth="166.0" promptText="Enter the Contact" />
+                        <Label layoutX="63.0" layoutY="247.0" text="Location">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="s_location" layoutX="200.0" layoutY="249.0" prefHeight="2.0" prefWidth="166.0" promptText="Enter the Location" />
+                        <Label layoutX="396.0" layoutY="154.0" prefHeight="35.0" prefWidth="81.0" text="Password">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="s_passwords1" layoutX="510.0" layoutY="157.0" promptText="Enter the password" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+
+            <!--////////////////-->
+            <AnchorPane fx:id="Teacher" prefHeight="869.0" prefWidth="763.0" visible="false">
+               <children>
+                  <!--                  -->
+                  <AnchorPane fx:id="teacherstable" layoutX="45.0" layoutY="486.0" prefHeight="372.0" prefWidth="698.0" style="-fx-background-color: white;" visible="false">
+                     <children>
+                        <TextField layoutX="93.0" layoutY="29.0" prefHeight="37.0" prefWidth="314.0" promptText="Search Teachers" />
+                        <Button layoutX="431.0" layoutY="31.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" styleClass="viewad" text="Search" />
+                        <AnchorPane layoutX="32.0" layoutY="93.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Teacher Name">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />
+                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="32.0" layoutY="168.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Teacher Name">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />
+                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="32.0" layoutY="239.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Teacher Name">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />
+                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="32.0" layoutY="304.0" prefHeight="54.0" prefWidth="634.0" style="-fx-background-color: #e4f3ff; -fx-background-radius: 12;">
+                           <children>
+                              <Label layoutX="29.0" layoutY="10.0" prefHeight="30.0" prefWidth="117.0" text="Teacher Name">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="553.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Remove" />
+                              <Button layoutX="478.0" layoutY="11.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="67.0" styleClass="viewad" text="Details" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+
+
+                  <!--                  -->
+                  <AnchorPane layoutX="34.0" layoutY="116.0" prefHeight="317.0" prefWidth="701.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField fx:id="t_name" layoutX="184.0" layoutY="109.0" prefHeight="28.0" prefWidth="161.0" promptText="Enter the Teacher Name" />
+                        <Label layoutX="46.0" layoutY="105.0" text="Teacher Name">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="158.0" text="Email">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="t_email" layoutX="185.0" layoutY="159.0" prefHeight="27.0" prefWidth="159.0" promptText="Enter the Email" />
+                        <Label layoutX="262.0" layoutY="14.0" text="Add Teacher" textFill="#191f29ba">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="213.0" text="Password">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="384.0" layoutY="200.0" text="Started Date">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="t_password" layoutX="184.0" layoutY="212.0" prefHeight="25.0" prefWidth="160.0" promptText="Enter the Password" />
+                        <DatePicker fx:id="t_date" layoutX="508.0" layoutY="201.0" prefHeight="23.0" prefWidth="145.0" promptText="Chose the Date" style="-fx-background-color: #BBDEFB;" />
+                        <Label layoutX="390.0" layoutY="107.0" text="Course">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="t_course" layoutX="470.0" layoutY="109.0" prefHeight="30.0" prefWidth="180.0" promptText="Enter the course" />
+                        <Label layoutX="46.0" layoutY="257.0" text="Phone">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="t_phone" layoutX="175.0" layoutY="258.0" prefHeight="19.0" prefWidth="174.0" promptText="Enter the Phone number" />
+                        <Button fx:id="addteacher" layoutX="508.0" layoutY="249.0" mnemonicParsing="false" onAction="#addteacher" prefHeight="40.0" prefWidth="84.0" styleClass="rounded-button1" text="Add" />
+                        <TextField fx:id="t_id" layoutX="182.0" layoutY="62.0" prefHeight="25.0" prefWidth="157.0" promptText="Enter the Teacher Name" />
+                        <Label layoutX="46.0" layoutY="58.0" text="Teacher ID">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="384.0" layoutY="58.0" text="Location">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="t_location" layoutX="470.0" layoutY="62.0" prefHeight="23.0" prefWidth="180.0" promptText="Enter the Location" />
+                        <Label layoutX="369.0" layoutY="157.0" text="Specialization">
+                           <font>
+                              <Font name="Cairo-Regular" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="t_specialization" layoutX="500.0" layoutY="155.0" prefHeight="30.0" prefWidth="150.0" promptText="Enter the course" />
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="45.0" layoutY="54.0" text="Teacher" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="447.0" text="Details" textFill="#1a202bba">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="41.0" layoutY="501.0" prefHeight="298.0" prefWidth="694.0">
+                     <children>
+                        <TableView fx:id="tableViewteacher" prefHeight="372.0" prefWidth="698.0">
+                           <columns>
+                              <TableColumn fx:id="idColumnTeacher" text="ID" />
+                              <TableColumn fx:id="nameColumnTeacher" text="Name" />
+                              <TableColumn fx:id="emailColumnTeacher" text="Email" />
+                              <TableColumn fx:id="passwordColumnTeacher" text="Password" />
+                              <TableColumn fx:id="contactColumnTeacher" text="Contact" />
+                              <TableColumn fx:id="locationColumnTeacher" text="Location" />
+                              <TableColumn fx:id="courseColumnTeacher" text="Course" />
+                              <TableColumn fx:id="specializationColumnTeacher" text="Specialization" />
+                              <TableColumn fx:id="startDateColumnTeacher" text="Start Date" />
+                           </columns>
+                        </TableView>
+
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="report_view" prefHeight="873.0" prefWidth="769.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text layoutX="53.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report " wrappingWidth="107.61068725585938">
+                     <font>
+                        <Font name="Cambria Math" size="32.0" />
+                     </font>
+                  </Text>
+                  <TableView fx:id="tableViewCounsel" layoutX="35.0" layoutY="103.0" prefHeight="750.0" prefWidth="712.0">
+                     <columns>
+                        <TableColumn fx:id="formNameColumn" prefWidth="144.33331298828125" text="Form Name" />
+                        <TableColumn fx:id="detailsColumn" prefWidth="566.6666870117188" text="Details" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Admin" prefHeight="873.0" prefWidth="768.0" visible="false">
+               <children>
+                  <Label layoutX="52.0" layoutY="70.0" text="Admin" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="a_mail" layoutX="172.0" layoutY="214.0" prefHeight="47.0" prefWidth="176.0" promptText="Enter the Admin Email" />
+                  <PasswordField fx:id="a_passwords1" layoutX="172.0" layoutY="283.0" prefHeight="47.0" prefWidth="176.0" promptText="Create a password" />
+                  <Button layoutX="164.0" layoutY="360.0" mnemonicParsing="false" onAction="#addAdmin" prefHeight="28.0" prefWidth="118.0" styleClass="rounded-button1" text="Add Admin" />
+                  <Label layoutX="78.0" layoutY="226.0" text="Email" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="295.0" text="Password" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="a_name" layoutX="172.0" layoutY="147.0" prefHeight="47.0" prefWidth="176.0" promptText="Enter the Admin Name" />
+                  <Label layoutX="78.0" layoutY="159.0" text="Name" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <!--/////////////////////-->
+         </children></AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="29.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+   </top>
+   <right>
+      <AnchorPane prefHeight="871.0" prefWidth="306.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="96.0" layoutY="55.0" prefHeight="37.0" prefWidth="95.0" text="Profile" textFill="#1a202bbb">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="111.0" fitWidth="114.0" layoutX="96.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pic/adminprofile.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="125.0" layoutY="214.0" text="Admin" textFill="#191f29be">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel" layoutX="75.0" layoutY="260.0" prefHeight="35.0" prefWidth="203.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="9.0" layoutY="292.0" prefHeight="255.0" prefWidth="287.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="90.0" layoutY="88.0" text="Calender">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="7.0" layoutY="555.0" prefHeight="287.0" prefWidth="291.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="131.0" layoutY="9.0" text="Events">
+                     <font>
+                        <Font name="Cairo-Regular" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="adminbutton" layoutX="217.0" layoutY="20.0" onAction="#getAdmin" prefHeight="49.0" prefWidth="10.0" styleClass="rounded-button">
+               <graphic>
+                  <HBox prefHeight="28.0" prefWidth="11.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="30.0" styleClass="image-with-border">
+                           <image>
+                              <Image url="@pic/setting.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

@@ -1,0 +1,30 @@
+/* styles.css */
+
+.text-field, .password-field {
+    -fx-prompt-text-fill: grey;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 10;
+    -fx-background-color: #BBDEFB;
+}
+
+
+.radio-button:selected .radio {
+    -fx-background-color: #359BE5;
+    -fx-border-color:white;
+        -fx-background-radius: 12;
+        -fx-border-radius: 12;
+
+}
+
+.radio-button:selected .radio > .dot {
+    -fx-background-color: #359BE5;
+}
+
+
+.radio-button > .radio {
+    -fx-background-color: #BBDEFB; /* Example color (red) */
+    -fx-border-color:#359BE5;
+            -fx-background-radius: 12;
+            -fx-border-radius: 12;
+}

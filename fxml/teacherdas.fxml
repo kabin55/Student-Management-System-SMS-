@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1320.0" style="-fx-background-color: #EEF8FE;" stylesheets="@css/stylest.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assigment3.TeacherDashboardController">
+   <left>
+      <AnchorPane prefHeight="871.0" prefWidth="245.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pic/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="55.0" layoutY="158.0" text="GENERAL" textFill="#718096">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="logout" layoutX="40.0" layoutY="785.0" onAction="#logout" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="LogOut">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <ImageView fitHeight="22.0" fitWidth="23.0" styleClass="image-with-border">
+                        <Image url="@pic/settings.png" />
+                     </ImageView>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding> <!-- Or use <Text> instead of <Label> -->
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="dasboardbutton" layoutX="34.0" layoutY="203.0" onAction="#getDashboard" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button1" text="DashBoard">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="23.0">
+                           <image>
+                              <Image url="@pic/dashboard.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="coursesbutton" layoutX="34.0" layoutY="265.0" onAction="#getCourse" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Courses">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="18.0">
+                           <image>
+                              <Image url="@pic/book_2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Studentbutton" layoutX="34.0" layoutY="330.0" onAction="#getStudent" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Students">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0">
+                     <children>
+                        <ImageView fitHeight="28.0" fitWidth="35.0">
+                           <image>
+                              <Image url="@pic/student.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="libarybutton" layoutX="34.0" layoutY="398.0" onAction="#getLibary" prefHeight="49.0" prefWidth="167.0" styleClass="rounded-button" text="Libary">
+               <graphic>
+                  <HBox prefHeight="22.0" prefWidth="25.0" spacing="5">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="24.0">
+                           <image>
+                              <Image url="@pic/book_2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee UI Bold" size="18.0" />
+               </font>
+            </Button>
+
+
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="907.0" prefWidth="856.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="Dashboard" layoutX="40.0" layoutY="40.0" prefHeight="909.0" prefWidth="816.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="45.0" layoutY="34.0" text="Dashboard" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="35.0" layoutY="96.0" prefHeight="147.0" prefWidth="707.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="63.0" prefHeight="51.0" prefWidth="231.0" text="Welcome Back ">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="54.0" layoutY="64.0" prefHeight="51.0" prefWidth="231.0" text="Teacher Name">
+                           <font>
+                              <Font name="Cairo-Regular" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="145.0" fitWidth="301.0" layoutX="409.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/teac.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="75.0" layoutY="488.0" text="Timeline" textFill="#191f29b4">
+                     <font>
+                        <Font name="Calibri Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="39.0" layoutY="520.0" prefHeight="318.0" prefWidth="699.0" style="-fx-background-color: white; -fx-background-radius: 12;">
+                     <children>
+                        <AnchorPane layoutX="30.0" layoutY="56.0" prefHeight="92.0" prefWidth="645.0" style="-fx-background-color: #F2F8F7; -fx-background-radius: 20;">
+                           <children>
+                              <ImageView fitHeight="69.0" fitWidth="140.0" layoutX="7.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 30;">
+                                 <image>
+                                    <Image url="@pic/image4.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="156.0" layoutY="41.0" prefHeight="22.0" prefWidth="214.0" text="Advance Programming Java" textFill="#191f29b4">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="156.0" layoutY="18.0" prefHeight="22.0" prefWidth="102.0" text="Assignment  1">
+                                 <font>
+                                    <Font name="Calibri Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="submission" layoutX="526.0" layoutY="29.0" mnemonicParsing="false" onAction="#getcourse" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="See Submissions" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="468.0" layoutY="38.0" text="10 july" textFill="#191f29b4">
+                                 <font>
+                                    <Font name="Calibri Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="52.0" layoutY="258.0" prefHeight="220.0" prefWidth="381.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="14.0" prefHeight="37.0" prefWidth="79.0" text="My Student">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="291.0" prefHeight="37.0" prefWidth="57.0" text="View All">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="19.0" layoutY="68.0" prefHeight="56.0" prefWidth="345.0" style="-fx-background-color: #F6FCFF; -fx-background-radius: 12; -fx-border-radius: 12;">
+                           <children>
+                              <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pic/rank1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="70.0" layoutY="8.0" prefHeight="37.0" prefWidth="67.0" text="Aaisha">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="264.0" layoutY="10.0" prefHeight="37.0" prefWidth="31.0" text="95%">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="18.0" layoutY="150.0" prefHeight="56.0" prefWidth="346.0" style="-fx-background-color: #F6FCFF; -fx-background-radius: 12; -fx-border-radius: 12;">
+                           <children>
+                              <ImageView fitHeight="39.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pic/rank2.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="63.0" layoutY="8.0" prefHeight="37.0" prefWidth="67.0" text="Aakriti">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="266.0" layoutY="10.0" prefHeight="37.0" prefWidth="28.0" text="94%">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="31.0" layoutY="38.0" prefHeight="37.0" prefWidth="41.0" text="Rank" textFill="#000000b6">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="280.0" layoutY="38.0" prefHeight="37.0" prefWidth="51.0" text="Grade" textFill="#000000b6">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="441.0" layoutY="258.0" prefHeight="220.0" prefWidth="304.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="149.0" fitWidth="168.0" layoutX="14.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/studentbatch.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="48.0" layoutY="-4.0" prefHeight="47.0" prefWidth="164.0" text="Student  Batch">
+                           <font>
+                              <Font name="Cairo-Regular" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="53.0" prefHeight="37.0" prefWidth="79.0" text="Jan 2023">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="190.0" layoutY="128.0" prefHeight="37.0" prefWidth="79.0" text="Aug 2023">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="libary1" layoutX="10.0" layoutY="10.0" prefHeight="869.0" prefWidth="776.0" visible="false">
+               <children>
+                  <Label layoutX="55.0" layoutY="64.0" text="Libary" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="64.0" layoutY="151.0" text="Books" textFill="#191f29b4">
+                     <font>
+                        <Font name="Calibri Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="55.0" layoutY="208.0" prefHeight="234.0" prefWidth="310.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="79.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image4.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="39.0" layoutY="126.0" prefHeight="22.0" prefWidth="214.0" text="Advance Programming Java" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="111.0" layoutY="179.0" mnemonicParsing="false" onAction="#course" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Open" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="55.0" layoutY="493.0" prefHeight="234.0" prefWidth="310.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="79.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image6.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="39.0" layoutY="126.0" prefHeight="22.0" prefWidth="243.0" text="Computer Intrusion Detection" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="111.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Open" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="439.0" layoutY="208.0" prefHeight="234.0" prefWidth="310.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="79.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/python.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="39.0" layoutY="126.0" prefHeight="22.0" prefWidth="214.0" text="Python Programming" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="110.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Open" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="439.0" layoutY="493.0" prefHeight="234.0" prefWidth="310.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="79.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image5.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="39.0" layoutY="126.0" prefHeight="22.0" prefWidth="214.0" text="Computer and Network Security" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="110.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Open" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="student1" layoutX="20.0" layoutY="20.0" prefHeight="869.0" prefWidth="776.0" visible="false">
+               <children>
+                  <Label layoutX="55.0" layoutY="64.0" text="Students" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="49.0" layoutY="153.0" prefHeight="60.0" prefWidth="678.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <TextField layoutX="25.0" layoutY="12.0" prefHeight="37.0" prefWidth="492.0" promptText="Enter the Student Name" />
+                        <Button layoutX="544.0" layoutY="15.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Search" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="35.0" layoutY="247.0" prefHeight="587.0" prefWidth="706.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <Label layoutX="84.0" layoutY="69.0" prefHeight="37.0" prefWidth="61.0" text="Student">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="602.0" layoutY="69.0" prefHeight="37.0" prefWidth="51.0" text="Grade" textFill="#000000b6">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="71.0" layoutY="126.0" prefHeight="56.0" prefWidth="590.0" style="-fx-background-color: #F6FCFF; -fx-background-radius: 12; -fx-border-radius: 12;">
+                           <children>
+                              <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pic/rank1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="70.0" layoutY="8.0" prefHeight="37.0" prefWidth="67.0" text="Aaisha">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="536.0" layoutY="10.0" prefHeight="37.0" prefWidth="31.0" text="95%">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="164.0" layoutY="8.0" prefHeight="37.0" prefWidth="161.0" text="Advance Programming" textFill="#000000b6">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="71.0" layoutY="207.0" prefHeight="56.0" prefWidth="590.0" style="-fx-background-color: #F6FCFF; -fx-background-radius: 12; -fx-border-radius: 12;">
+                           <children>
+                              <ImageView fitHeight="39.0" fitWidth="46.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@pic/rank2.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="63.0" layoutY="8.0" prefHeight="37.0" prefWidth="67.0" text="Aakriti">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="536.0" layoutY="10.0" prefHeight="37.0" prefWidth="28.0" text="94%">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="166.0" layoutY="8.0" prefHeight="37.0" prefWidth="52.0" text="Python" textFill="#000000b6">
+                                 <font>
+                                    <Font name="Cairo-Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="233.0" layoutY="69.0" prefHeight="37.0" prefWidth="61.0" text="Course">
+                           <font>
+                              <Font name="Cairo-Regular" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="course1" layoutX="20.0" layoutY="20.0" prefHeight="869.0" prefWidth="776.0" visible="false">
+               <children>
+                  <Label layoutX="55.0" layoutY="64.0" text="Courses" textFill="#1a202bb9">
+                     <font>
+                        <Font name="Arial Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="64.0" layoutY="151.0" text="My Courses" textFill="#191f29b4">
+                     <font>
+                        <Font name="Calibri Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="55.0" layoutY="208.0" prefHeight="234.0" prefWidth="310.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="79.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/image4.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="39.0" layoutY="126.0" prefHeight="22.0" prefWidth="214.0" text="Advance Programming Java" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="47.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Add Task" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="52.0" layoutY="151.0" prefHeight="22.0" prefWidth="214.0" text="Total Students: 30" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="163.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="View" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="439.0" layoutY="208.0" prefHeight="234.0" prefWidth="310.0" style="-fx-background-color: white; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="106.0" fitWidth="152.0" layoutX="79.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pic/python.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="39.0" layoutY="126.0" prefHeight="22.0" prefWidth="214.0" text="Python Programming" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="56.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Add Task" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="51.0" layoutY="151.0" prefHeight="22.0" prefWidth="214.0" text="Total Students: 50" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="188.0" layoutY="179.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #79B6FF; -fx-background-radius: 12;" text="Veiw" textFill="WHITE">
+                           <font>
+                              <Font name="Cairo-Regular" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="871.0" prefWidth="306.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="106.0" layoutY="45.0" prefHeight="37.0" prefWidth="95.0" text="Profile" textFill="#1a202bbb">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="111.0" fitWidth="114.0" layoutX="96.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pic/profile.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="94.0" layoutY="217.0" text="Teacher name" textFill="#191f29be">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel" layoutX="75.0" layoutY="260.0" prefHeight="35.0" prefWidth="203.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="9.0" layoutY="292.0" prefHeight="255.0" prefWidth="287.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="90.0" layoutY="88.0" text="Calender">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="7.0" layoutY="589.0" prefHeight="253.0" prefWidth="291.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane layoutX="25.0" layoutY="23.0" prefHeight="145.0" prefWidth="241.0" style="-fx-background-color: #F2F8F7; -fx-background-radius: 20;">
+                     <children>
+                        <ImageView fitHeight="69.0" fitWidth="140.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" style="fx-background-radius: 30;">
+                           <image>
+                              <Image url="@pic/image4.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="27.0" layoutY="87.0" prefHeight="22.0" prefWidth="214.0" text="Advance Programming Java" textFill="#191f29b4">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="109.0" prefHeight="22.0" prefWidth="102.0" text="Sunday, Friday">
+                           <font>
+                              <Font name="Calibri Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="96.0" layoutY="547.0" text="Class Timeline">
+               <font>
+                  <Font name="Cairo-Regular" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
